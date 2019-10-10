@@ -64,23 +64,34 @@ request.setCharacterEncoding("utf-8");
   }
   %>
   <center>
+  
   <table border=0>
+  
    <tr>
+   
     <td align=left width=200> <!-- 년 도-->
     <a href="calendar.jsp?year=<%out.print(year-1);%>&month=<%out.print(month);%>">◀</a>
     <% out.print(year); %>년
     <a href="calendar.jsp?year=<%out.print(year+1);%>&month=<%out.print(month);%>">▶</a>
     </td>
+    
     <td align=center width=300> <!-- 월 -->
     <a href="calendar.jsp?year=<%out.print(year);%>&month=<%out.print(month-1);%>">◀</a>
     <% out.print(month+1); %>월
     <a href="calendar.jsp?year=<%out.print(year);%>&month=<%out.print(month+1);%>">▶</a>
     </td>
-    <td align=right width=200><% out.print(currentYear + "-" + (currentMonth+1) + "-" + currentDate); %></td>
+    
+    <td align=right width=200><% out.print(currentYear + "-" + (currentMonth+1) + "-" + currentDate); %>
+    </td>
+    
    </tr>
+   
   </table>
-  <table border=1 cellspacing=0> <!-- 달력 부분 -->
-   <tr>
+  
+  <table border=2 cellspacing=0> <!-- 달력 부분 -->
+  
+   <tr width=100 bgcolor=#DDE7E7>
+   
     <td width=150>일</td> <!-- 일=1 -->
     <td width=150>월</td> <!-- 월=2 -->
     <td width=150>화</td> <!-- 화=3 -->
@@ -88,8 +99,11 @@ request.setCharacterEncoding("utf-8");
     <td width=150>목</td> <!-- 목=5 -->
     <td width=150>금</td> <!-- 금=6 -->
     <td width=150>토</td> <!-- 토=7 -->
+    
    </tr>
-   <tr height=35>
+   
+   <tr height=100 bgcolor=#E7E6D2>
+   
    <%
    cal.set(year, month, 1); //현재 날짜를 현재 월의 1일로 설정
    int startDay=cal.get(java.util.Calendar.DAY_OF_WEEK); //현재날짜(1일)의 요일
@@ -129,19 +143,26 @@ request.setCharacterEncoding("utf-8");
     out.println("</td>");
     br++;
     if((br%7)==0 && i!=end) {
-     out.println("</tr><tr height=30>");
+     out.println("</tr><tr height=100 bgcolor=#E7E6D2>");
     }
    }
    while((br++)%7!=0) //말일 이후 빈칸출력
     out.println("<td>&nbsp;</td>");
    %>
+   
    </tr>
+   
   </table>
+  
   </center>
+  
  </body>
+ 
 </html>
+
+
    <%
-        //사용한 자원을 반납한다.
+        //DB 자원 반납.
        pstmt.close();
        conn.close();
    %>

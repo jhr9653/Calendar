@@ -3,6 +3,8 @@
 request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 
+ 
   <%
   //DB 연결 소스
   
@@ -18,6 +20,8 @@ request.setCharacterEncoding("utf-8");
 	   out.println("Connection Failed.");
 	  } 
   %>
+  
+  
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -32,11 +36,10 @@ request.setCharacterEncoding("utf-8");
    <input type=text name=memoMonth size=2>월
    <input type=text name=memoDay size=2>일
    내용 : <input type=text name=memoContents>
-   <input type=submit value="추가">
+   <input type=submit value="추가"><br><br><br>
   </form>
    <%
    Statement stmt = conn.createStatement();
-  //if (request.getParameter("username") != null) {
    String sql= "INSERT INTO CALENDARMEMO (CALENDARMEMO_YEAR, CALENDARMEMO_MONTH, CALENDARMEMO_DAY, CALENDARMEMO_CONTENTS) VALUES (";
    sql+= request.getParameter("memoYear");
    sql+= ", ";
@@ -47,27 +50,13 @@ request.setCharacterEncoding("utf-8");
    sql+= request.getParameter("memoContents");
    sql+= " \')";
    
-   // INSERT INTO jdbc_testVALUES (‘홍길동’, ‘test@test.net’)
-     
+   
    int r = stmt.executeUpdate(sql);
    
    if(r==1){
    out.println("1개 데이터 추가 성공");
    }
- //  }
-/*select 문장을문자열형태로구성한다.
-  String sql= "SELECT username, email FROM jdbc_test";
-  pstmt= conn.prepareStatement(sql);
-  // select 를수행하면데이터정보가ResultSet클래스의인스턴스로리턴
-  ResultSet rs= pstmt.executeQuery();
-  int i= 1;
-  // 마지막데이터까지반복함.
-  while (rs.next()) {
-  out.print(i+ " : " + rs.getString(1) + " , ");
-  out.println(rs.getString("email") + "<BR>");
-  i++;
-  }
-  rs.close();*/
+
   %>
   <HR>
   </center>
