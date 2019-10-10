@@ -4,7 +4,8 @@ request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  
- 
+  
+	
   <%
   //DB 연결 소스
   
@@ -20,14 +21,28 @@ request.setCharacterEncoding("utf-8");
 	   out.println("Connection Failed.");
 	  } 
   %>
-  
-  
+ <!--  
+ /* *
+	*
+	* @brief 	메모추가 소스
+	*
+	* @author 	윤상혁
+	* @date 	2019-10-09
+	*
+	* @param 	action
+	*
+	* @remark	DB연동소스 및 메모추가하는 jsp파일. 메모추가시 Calendar.jsp에 반영되며 연동해놓은 mysqldb에 저장됨. [2019-10-09; 윤상혁] \n
+	*
+	*/ -->
+	
+	
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
   <title>일정 추가</title>
  </head>
  <body>
+ 
   <center>
   <H2>일정 추가</H2>
   <HR>

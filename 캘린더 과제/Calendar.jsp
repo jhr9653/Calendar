@@ -8,6 +8,21 @@ request.setCharacterEncoding("utf-8");
 <%@page import="java.sql.DriverManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 
+ <!--
+	*
+	* 
+	* @brief 	캘린더 소스
+	*
+	* @author 	윤상혁
+	* @date 	2019-10-09
+	*
+	* @param 	action
+	*
+	* @remark	DB연동소스 및 날짜별 캘린더를 나타냄 & MemoAdd.jsp에서 메모추가시 이쪽에 적용이 된다. [2019-10-09; 윤상혁] \n
+	*
+	*/
+	->
   <%
   //DB 연결 소스
     
@@ -29,7 +44,9 @@ request.setCharacterEncoding("utf-8");
 	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 	  <title>일정 확인 프로그램</title>
  </head>
+ 
  <body>
+
   <%
   java.util.Calendar cal=java.util.Calendar.getInstance(); //Calendar객체 cal생성
   
