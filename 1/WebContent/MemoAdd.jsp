@@ -66,9 +66,9 @@ request.setCharacterEncoding("utf-8");
    sql+= " \')";
    
    
-   int r = stmt.executeUpdate(sql);
+   int dataplus = stmt.executeUpdate(sql);
    
-   if(r==1){
+   if(dataplus==1){
    out.println("1개 데이터 추가 성공");
    }
 

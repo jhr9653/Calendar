@@ -40,6 +40,14 @@ request.setCharacterEncoding("utf-8");
 	  } 
   %>
 <html>
+
+<style>
+BODY {overflow-y:auto}
+TABLE {font-size:15pt;font-family:굴림;}
+IMG {border: none;}
+select,option {font-size:9pt;font-family:tahoma;color:13485D;background-color:B4D2DE}
+</style>
+
  <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 	  <title>일정 확인 프로그램</title>
@@ -107,7 +115,7 @@ request.setCharacterEncoding("utf-8");
   
   <table border=2 cellspacing=0> <!-- 달력 부분 -->
   
-   <tr width=100 bgcolor=#DDE7E7>
+   <tr width=100 bgcolor=#DDE7E7 align="center">
    
     <td width=150>일</td> <!-- 일=1 -->
     <td width=150>월</td> <!-- 월=2 -->
@@ -134,7 +142,7 @@ request.setCharacterEncoding("utf-8");
     }
    }
    for(int i=1; i<=end; i++) { //날짜출력
-    out.println("<td>" + i + "<br>");
+    out.println("<td align=left valign=top>" + i + "<br>");
       //일정 추가
       int memoyear, memomonth, memoday;
       try{
@@ -160,7 +168,7 @@ request.setCharacterEncoding("utf-8");
     out.println("</td>");
     br++;
     if((br%7)==0 && i!=end) {
-     out.println("</tr><tr height=100 bgcolor=#E7E6D2>");
+     out.println("</tr><tr height=100 bgcolor=#E7E6D2 align=left valign=top>");
     }
    }
    while((br++)%7!=0) //말일 이후 빈칸출력
