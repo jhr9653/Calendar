@@ -66,19 +66,20 @@ request.setCharacterEncoding("utf-8");
    sql+= " \')";
    
    
-   int dataplus = stmt.executeUpdate(sql);
+   // int dataplus = stmt.executeUpdate(sql);
    
-   if(dataplus==1){
-   out.println("1개 데이터 추가 성공");
-   }
-
+   // if(dataplus==1){
+   // out.println("1개 데이터 추가 성공");
+   // }
+   
+   // 위의 쿼리는 메모넣기에 성공했을 시 1개 데이터 추가 성공 이라는 문구가 뜨도록 하는 것인데, 오류때문에 작동이 안됨.
   %>
   <HR>
   </center>
 </body>
 </html>
    <%
-        //사용한 자원을 반납한다.
+        //DB 자원 반납.
        stmt.close();
        conn.close();
    %>
