@@ -52,18 +52,6 @@ select,option {font-size:9pt;font-family:tahoma;color:13485D;background-color:B4
 	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 	  <title>일정 확인 프로그램</title>
 	  <script>
-	  		function editcheck(id) {
-		
-			// get방식
-			// document.location.href="addr_control.jsp?action=edit&id="+id;
-			
-			// post방식
-			document.form1.action.value="edit";
-			document.form1.id.value=id;
-			document.form1.submit();
-	
-			
-		}
 	</script>
  </head>
  
