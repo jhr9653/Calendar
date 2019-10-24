@@ -161,7 +161,7 @@ select,option {font-size:9pt;font-family:tahoma;color:13485D;background-color:B4
       int memoyear, memomonth, memoday;
       try{
         // select 문장을 문자열 형태로 구성한다.
-       String sql= "SELECT CALENDARMEMO_YEAR, CALENDARMEMO_MONTH, CALENDARMEMO_DAY, CALENDARMEMO_CONTENTS FROM CALENDARMEMO";
+       String sql= "delete from CALENDARMEMO";
        pstmt= conn.prepareStatement(sql);
         // select 를 수행하면 데이터 정보가 ResultSet 클래스의 인스턴스로 리턴
        ResultSet rs= pstmt.executeQuery();
@@ -171,7 +171,7 @@ select,option {font-size:9pt;font-family:tahoma;color:13485D;background-color:B4
         memomonth=rs.getInt("CALENDARMEMO_MONTH");
         memoday=rs.getInt("CALENDARMEMO_DAY");
         if(year==memoyear && month+1==memomonth && i==memoday) {
-         out.println("<a href='javascript:editcheck('CALENDARMEMO_CONTENTS')'>"+rs.getString("CALENDARMEMO_CONTENTS")+"<br>"+"</a>"); 
+         out.println("<a href=''>"+rs.getString("CALENDARMEMO_CONTENTS")+"<br>"+"</a>"); 
         }
        }
        rs.close();
