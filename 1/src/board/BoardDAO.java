@@ -16,7 +16,20 @@ public class BoardDAO {
 	
 	String jdbc_url = "jdbc:mysql://127.0.0.1/jspdb?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC";
 	
-
+	/**
+	 *
+	 * @fn 		connect()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 *
+	 * @remark	데이터베이스연결	[2019-10-31; 김성택] \n
+	 *
+	 */
+	
 	void connect() {
 		try {
 			Class.forName(jdbc_driver);
@@ -27,7 +40,19 @@ public class BoardDAO {
 		}
 	}
 
-	
+	/**
+	 *
+	 * @fn 		disconnect()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 *
+	 * @remark	데이터베이스해제	[2019-10-31; 김성택] \n
+	 *
+	 */		
 
 	void disconnect() {
 		if(pstmt != null) {
@@ -46,6 +71,20 @@ public class BoardDAO {
 		}
 	}
 
+	/**
+	 *
+	 * @fn 		insertDB()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 * @param 	boardDTO
+	 *
+	 * @remark	데이터베이스에 정보입력	[2019-10-31; 김성택] \n
+	 *
+	 */	
 
 	public boolean insertDB(BoardDTO boardDTO) {
 		
@@ -77,7 +116,6 @@ public class BoardDAO {
 		}
 		return true;
 	}
-	
 	
 
 	public ArrayList<BoardDTO> getDBList() {
@@ -119,8 +157,23 @@ public class BoardDAO {
 		}
 		return boardList;
 	}
-
-
+	
+	/**
+	 *
+	 * @fn 		getDB()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 * @param 	id
+	 *
+	 * @remark	단일정보조회 메소드 [2019-10-31; 김성택] \n
+	 *
+	 */	
+	
+	
 	public BoardDTO getDB(int id) {
 		
 		connect();
@@ -159,7 +212,22 @@ public class BoardDAO {
 		}
 		return boardDTO;
 	}
-
+	
+	/**
+	 *
+	 * @fn 		getRead()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 * @param 	id
+	 *
+	 * @remark	수정화면조회 메소드 [2019-10-31; 김성택] \n
+	 *
+	 */
+	
 	public BoardDTO getRead(int id) {
 		
 		connect();
@@ -199,6 +267,21 @@ public class BoardDAO {
 		return boardDTO;
 	}
 
+	/**
+	 *
+	 * @fn 		updateDB()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 * @param 	boardDTO
+	 *
+	 * @remark	정보수정메소드 [2019-10-31; 김성택] \n
+	 *
+	 */
+	
 	public boolean updateDB(int id,BoardDTO boardDTO) {
 		
 		
@@ -228,7 +311,20 @@ public class BoardDAO {
 		return true;
 	}
 	
-	
+	/**
+	 *
+	 * @fn 		deleteDB()
+	 * 
+	 * @brief 	dao
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-31
+	 *
+	 * @param 	id
+	 *
+	 * @remark	정보삭제메소드 [2019-10-31; 김성택] \n
+	 *
+	 */
 
 	public boolean deleteDB(int id) {
 		

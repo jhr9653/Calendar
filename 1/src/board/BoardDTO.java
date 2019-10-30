@@ -8,6 +8,20 @@ public class BoardDTO {
 	private String date;
 	private String content;
 	
+	/**
+	 *
+	 * @fn 		get,set()
+	 * 
+	 * @brief 	dto
+	 *
+	 * @author 	김성택
+	 * @date 	2019-10-09
+	 *
+	 *
+	 * @remark	데이터를 넘겨받고 넘겨주는 역할수행	[2019-09-09; 김성택] \n
+	 *
+	 */
+	
 	public int getId() {
 		return id;
 	}

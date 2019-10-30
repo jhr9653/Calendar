@@ -55,6 +55,21 @@ public class BoardController extends HttpServlet {
 				boardDTO.setDate(request.getParameter("date"));
 				boardDTO.setContent(request.getParameter("content"));
 			}
+			
+			/**
+			*
+			* @fn 		action.equals()
+			* 
+			* @brief 	control
+			*
+			* @author 	김성택
+			* @date 	2019-10-31
+			*
+			* @param 	action
+			*
+			* @remark	값에따라 메소드를 다르게작용 [2019-10-31; 김성택] \n
+			*
+			*/			
 				
 			BoardDAO boardDAO = new BoardDAO();
 				
