@@ -171,6 +171,23 @@
 				<th>작성자</th>
 				<th>작성일</th>
 			</tr>
+			
+			<%
+			/**
+			*
+			* @fn 		for( : )
+			* 
+			* @brief 	list
+			*
+			* @author 	김성택
+			* @date 	2019-10-31
+			*
+			* @param 	boardDTO
+			*
+			* @remark	값을하나씩 꺼내와서 출력해줌 [2019-10-31; 김성택] \n
+			*
+			*/
+			%>
 						<c:forEach var="i" items="${boardList}">
 						<tr>
 							<td class="tit_notice">${i.id}</td>
