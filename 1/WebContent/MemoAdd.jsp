@@ -11,10 +11,11 @@ request.setCharacterEncoding("utf-8");
   
   PreparedStatement pstmt = null;
   String driverName="com.mysql.jdbc.Driver";
-  String url = "jdbc:mysql://localhost:3306/Calendar?serverTimezone=UTC";
-  String id = "Calendar";
+  String url = "jdbc:mysql://127.0.0.1/jspdb?useSSL=true&verifyServerCertificate=false&serverTimezone=UTC";
+  String id = "jspbook";
   String pwd ="1234";
- 
+  request.setCharacterEncoding("utf-8");
+  
 	  Class.forName(driverName);
 	  Connection conn = DriverManager.getConnection(url,id,pwd);
 	  if (conn== null) {
